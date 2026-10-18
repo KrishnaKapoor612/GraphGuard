@@ -6,6 +6,9 @@ An AI-powered cybersecurity incident investigator that uses **FalkorDB** to trav
 
 **Graph Hacks 2026 | Track 1: Agents That Act on Connected Data**
 
+- **Project write-up:** [Building GraphGuard: How a Graph Database Transformed Cybersecurity Investigation](https://dev.to/krishnakapoor612/building-graphguard-how-a-graph-database-transformed-cybersecurity-investigation-d49)
+- **Demo video:** [Watch GraphGuard on YouTube](https://youtu.be/UB7seRPO52Y)
+
 ---
 
 ## 🎯 Value Proposition
@@ -45,7 +48,7 @@ Security analysts face an **alert fatigue crisis**: thousands of individual aler
                        │
 ┌──────────────────────▼──────────────────────────────────────────┐
 │                   Agent Service                                   │
-│  Gemini 1.5 Flash + LangChain tool calling                       │
+│  Gemini 3.8 Flash + LangChain tool calling                       │
 │  Safe predefined tools only — no raw Cypher to LLM               │
 └──────┬──────────────┬────────────────┬───────────────────────────┘
        │              │                │
@@ -420,65 +423,3 @@ python -m pytest tests/ -v
 - Graph algorithm integration (shortest path, centrality for pivot point detection)
 
 ---
-
-## 🏆 Hackathon Submission
-
-- **Event**: Graph Hacks 2026
-- **Track**: Track 1 — Agents That Act on Connected Data
-- **Demo Video**: [To be added after recording]
-- **Deployment**: [Local setup — see instructions above]
-
----
-
-## 📝 AI Assistance Acknowledgment
-
-This project was built with AI coding assistance (Google Antigravity / Claude). All graph query logic, security scenarios, and data model decisions were verified and reviewed by the human developer. The synthetic data scenarios are original and designed specifically to demonstrate meaningful graph traversal for cybersecurity investigation.
-
----
-
-## 📸 Screenshots to Capture for Submission
-
-1. Overview dashboard with live FalkorDB metrics
-2. Investigation workspace — alert selected (A-104)
-3. Investigation results — confirmed facts vs inferences panel
-4. Graph path display showing 4-hop traversal
-5. Related alerts discovered via IP connection
-6. Affected services panel
-7. Graph Explorer showing investigation subgraph
-8. Investigation History — saved investigation retrieved from FalkorDB
-
----
-
-## ✅ Submission Checklist
-
-- [x] FalkorDB used as authoritative graph store
-- [x] Real multi-hop Cypher queries (not simulated)
-- [x] AI agent with predefined safe tools
-- [x] Persistent investigation memory across sessions
-- [x] Evidence grounding (facts vs inferences labeled)
-- [x] Recommended actions require human approval
-- [x] Demo mode works without Gemini API key
-- [x] Tests pass (14/14)
-- [x] No secrets in code
-- [x] README complete
-- [ ] Demo video recorded
-- [ ] Deployed to public URL (optional)
-
----
-
-## 🎬 2-Minute Demo Script
-
-**Scene 1 — The Alert (20s)**
-"Here's Alert A-104 — a suspicious outbound connection. Looking at it alone, it might not seem critical."
-
-**Scene 2 — The Investigation (40s)**
-Click "Investigate". Show the agent following graph relationships. Highlight the multi-hop path display.
-
-**Scene 3 — The Discovery (30s)**
-"The graph reveals: this device contacted a known Tor exit node. That same IP was linked to a C2 beacon attempt 3 hours earlier. The device's user has elevated risk. We've found an active Data Exfiltration incident — and two critical services may be compromised."
-
-**Scene 4 — Persistent Memory (20s)**
-Navigate to Investigation History. Show the saved investigation. "This was retrieved from FalkorDB — not from chat memory. It persists across sessions."
-
-**Scene 5 — Value Prop (10s)**
-"Without FalkorDB graph traversal, Alert A-104 is just one record. With it, we have an attack narrative."
