@@ -331,13 +331,17 @@ pip install -r requirements.txt
 
 ### 2. Configure environment
 
+GraphGuard's AI investigation requires **your own Google AI API key**. You also need a reachable FalkorDB instance and must use **your own connection details**. The repository does not provide shared API or database credentials. For an authenticated/hosted FalkorDB instance, enter your own username and password; a local Docker instance may not require them.
+
 ```bash
 cp .env.example .env
-# Edit .env and set:
-# GOOGLE_API_KEY=your_key_from_aistudio.google.com
-# FALKORDB_HOST=localhost
-# FALKORDB_PORT=6379
 ```
+
+On Windows PowerShell, use `Copy-Item .env.example .env` instead. Edit `.env` and set `GOOGLE_API_KEY`, `FALKORDB_HOST`, and `FALKORDB_PORT`. If your FalkorDB instance requires authentication, also set `FALKORDB_USERNAME` and `FALKORDB_PASSWORD`.
+
+To use a managed database instead of running FalkorDB locally, create an instance through [FalkorDB Cloud](https://app.falkordb.cloud/signin), then copy that instance's connection details into your local `.env` file.
+
+Get your own Google AI API key from [Google AI Studio](https://aistudio.google.com/).
 
 ### 3. Start FalkorDB
 
